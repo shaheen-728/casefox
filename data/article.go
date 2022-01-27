@@ -1,11 +1,12 @@
 package data
 
+ //import models for model struct
 import (
 
 	"github.com/shaheen-728/casefox/models"
 )
-
-var Articles = []models.Article{
+// mock data is used to store data in memory and get all articles by get method
+var Articles = []models.Article{ //variable Articles of type struct
 	{
 		ID:     10,
 		Title:  "Alchemist",

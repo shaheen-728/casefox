@@ -10,6 +10,7 @@ import (
 	"github.com/shaheen-728/casefox/models"
 	handler "github.com/shaheen-728/casefox/handlers"
 )
+////sampleArticle is to check an article is same as response article
 
 var sampleArticle = []models.Article{
 	{

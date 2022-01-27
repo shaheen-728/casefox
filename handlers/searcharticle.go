@@ -7,12 +7,12 @@ import (
 
 	"github.com/shaheen-728/casefox/data"
 )
-//Test Function for search an article
+//Function SearchArticle is used to  search  for an article
 func SearchArticle(w http.ResponseWriter, r *http.Request) {
    // search an article by query parameter title,subtitle,content
-	title := r.URL.Query().Get("title")
-    subtitle := r.URL.Query().Get("subtitle")
-	content:= r.URL.Query().Get("content")
+	title := r.URL.Query().Get("title")//retrieve title by Query paramter url
+    subtitle := r.URL.Query().Get("subtitle")//retrieve subtitle by Query parameter url
+	content:= r.URL.Query().Get("content")//retrieve content by Query parameter url
 
 	// Iterate over all the data articles
 	for _, article := range data.Articles {
@@ -21,9 +21,9 @@ func SearchArticle(w http.ResponseWriter, r *http.Request) {
 			w.Header().Add("Content-Type", "application/json")
 			w.WriteHeader(http.StatusOK)
 			json.NewEncoder(w).Encode(article)
-			break
+			break //out of the loop if article is found
 		}else{
-			fmt.Println("Article not found")
+			fmt.Println("Article not found")//print if article is not found
 		}
 
 	}

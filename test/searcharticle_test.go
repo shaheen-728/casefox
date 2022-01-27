@@ -10,6 +10,7 @@ import (
 	"github.com/shaheen-728/casefox/models"
 	handler "github.com/shaheen-728/casefox/handlers"
 )
+//sampleArticle3 is to check an article is same as response searching article
 
 var sampleArticle3 = []models.Article{
 	{
@@ -22,7 +23,7 @@ var sampleArticle3 = []models.Article{
 		
 }
 
-//Test Function for get an article 
+//Test Function for search an article 
 func TestSearchArticle(t *testing.T) {
 	req, err := http.NewRequest("GET", "/articles/search", nil)
 	if err != nil {

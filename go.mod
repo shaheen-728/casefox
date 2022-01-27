@@ -1,4 +1,4 @@
-module github.com/shaheen-728/casefox
+module github.com/shaheen-728/casefox //mod file by go mod init command
 
 go 1.17
 
