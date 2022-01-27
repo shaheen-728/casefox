@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -13,7 +12,7 @@ import (
 //Func GetArticle is used to get an article by given id
 func GetArticle(w http.ResponseWriter, r *http.Request) {
 	// Read dynamic id parameter bu mux
-	vars := mux.Vars(r) 
+	vars := mux.Vars(r)
 	id, _ := strconv.Atoi(vars["id"]) // convert id into integer
 
 	// Iterate over all the data articles
@@ -23,9 +22,7 @@ func GetArticle(w http.ResponseWriter, r *http.Request) {
 			w.Header().Add("Content-Type", "application/json")
 			w.WriteHeader(http.StatusOK)
 			json.NewEncoder(w).Encode(article)
-			break // get out of the loop if you are get an article 
-		}else{
-			fmt.Println("Article is not found")
+			break // get out of the loop if you are get an article
 		}
 	}
 }

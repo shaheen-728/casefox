@@ -7,23 +7,23 @@ import (
 	"testing"
 
 	"github.com/go-playground/assert"
-	"github.com/shaheen-728/casefox/models"
 	handler "github.com/shaheen-728/casefox/handlers"
+	"github.com/shaheen-728/casefox/models"
 )
-//sampleArticle3 is to check an article is same as response searching article
+
+//sampleArticle3 is to check an article is same as response searching articles
 
 var sampleArticle3 = []models.Article{
 	{
-		
-			ID:     100,
-			Title:  "The Rise of the Ancient Mariner",
-     		SubTitle: "bird",
-			Content:   "A book for Mariners ",
-			Creation_Timestamp : "2022-09-27 21:26:28.704679241 +0530 IST m=+33.989299685"},
-		
+
+		ID:                 100,
+		Title:              "The Rise of the Ancient Mariner",
+		SubTitle:           "bird",
+		Content:            "A book for Mariners ",
+		Creation_Timestamp: "2022-09-27 21:26:28.704679241 +0530 IST m=+33.989299685"},
 }
 
-//Test Function for search an article 
+//Test Function for search an article
 func TestSearchArticle(t *testing.T) {
 	req, err := http.NewRequest("GET", "/articles/search", nil)
 	if err != nil {
